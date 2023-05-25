@@ -20,7 +20,7 @@ app.post("/chat", async (req, res) => {
 
 async function sendMessageToChatGPT(message) {
   const apiUrl = "https://api.openai.com/v1/chat/completions";
-  const apiKey = "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"; // Ganti dengan API key Anda
+  const apiKey = "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"; // Ganti dengan API key Anda
   const model = "gpt-3.5-turbo"; // Model ChatGPT yang akan digunakan
 
   const response = await axios.post(
