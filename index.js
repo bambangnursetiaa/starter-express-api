@@ -1,16 +1,10 @@
 const express = require("express");
 const axios = require("axios");
 
-
 const app = express();
 const port = 3000;
 
 app.use(express.json());
-
-app.all('/', (req, res) => {
-    console.log("Just got a request!")
-    res.send('Yo! hola')
-})
 
 app.post("/chat", async (req, res) => {
   const { message } = req.body;
@@ -49,6 +43,6 @@ async function sendMessageToChatGPT(message) {
   return response.data.choices[0].message.content;
 }
 
-app.listen(process.env.PORT || 3000)
-
-
+app.listen(port, () => {
+  console.log(`Web service listening at http://localhost:${port}`);
+});
